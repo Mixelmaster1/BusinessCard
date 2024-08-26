@@ -95,7 +95,6 @@ fun NameInfo(modifier: Modifier, textColor: Color) {
 @Composable
 fun Contact(modifier: Modifier) {
     Column(
-        horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Row {
             Icon(
