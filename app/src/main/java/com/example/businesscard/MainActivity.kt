@@ -9,12 +9,17 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.rounded.Call
+import androidx.compose.material.icons.rounded.Share
+import androidx.compose.material3.Icon
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -51,17 +56,23 @@ fun Card(name: String, modifier: Modifier = Modifier) {
     Column(
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally,
-        modifier = modifier
+        modifier = modifier.background(
+            color = Color.Cyan
+        )
     ) {
-        NameInfo(modifier.align(alignment = Alignment.CenterHorizontally))
-        Spacer(Modifier.height(20.dp))
+        NameInfo(
+            modifier
+                .align(alignment = Alignment.CenterHorizontally),
+            Color.Magenta
+        )
+        Spacer(Modifier.height(50.dp))
         Contact(modifier.align(alignment = Alignment.CenterHorizontally))
     }
 }
 
 @Composable
-fun NameInfo(modifier: Modifier) {
-    Column() {
+fun NameInfo(modifier: Modifier, textColor: Color) {
+    Column(horizontalAlignment = Alignment.CenterHorizontally) {
         Image(
             painter = painterResource(id = R.drawable.android_logo),
             contentDescription = null,
@@ -75,10 +86,12 @@ fun NameInfo(modifier: Modifier) {
         Text(
             text = "Mr. Armstrong",
             fontSize = 20.sp,
+            color = textColor,
             modifier = modifier
         )
         Text(
             text = "Computer Science Program Lead",
+            color = textColor,
             modifier = modifier
         )
     }
@@ -86,19 +99,33 @@ fun NameInfo(modifier: Modifier) {
 
 @Composable
 fun Contact(modifier: Modifier) {
-    Column() {
-        Text(
-            text = "+00 (00) 000 0000",
-            modifier = modifier
-        )
-        Text(
-            text = "@socialmediahandle",
-            modifier = modifier
-        )
+    Column(
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Row {
+            Icon(
+                Icons.Rounded.Call,
+                contentDescription = null
+            )
+            Text(
+                text = "+00 (00) 000 0000",
+                modifier = modifier
+            )
+        }
+        Row {
+            Icon(
+                Icons.Rounded.Share,
+                contentDescription = null
+            )
+            Text(
+                text = "@socialmediahandle",
+                modifier = modifier
+            )
+        }
+
         Text(
             text = "email@domain.com",
             modifier = modifier
-
         )
     }
 }
