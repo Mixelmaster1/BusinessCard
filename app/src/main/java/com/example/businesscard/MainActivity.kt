@@ -102,7 +102,7 @@ fun Contact(modifier: Modifier) {
                 contentDescription = null
             )
             Text(
-                text = "+00 (00) 000 0000",
+                text = "+19 (55) 897 1508",
                 modifier = modifier
             )
         }
@@ -112,7 +112,7 @@ fun Contact(modifier: Modifier) {
                 contentDescription = null
             )
             Text(
-                text = "@socialmediahandle",
+                text = "@Xavjones002@warren.k12.in.us",
                 modifier = modifier
             )
         }
